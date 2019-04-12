@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>HeroesDetails</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngFor="let hero of heroData" >
+        <ion-card-header>
+            <ion-avatar item-start>
+                <img src="{{hero.thumbnail.path + '.' + hero.thumbnail.extension}}">
+            </ion-avatar>
+            <ion-card-title>{{hero.name}}</ion-card-title>
+            <ion-card-subtitle>{{hero.modified}}</ion-card-subtitle>
+        </ion-card-header>
+    
+        <ion-card-content>
+          <p>{{hero.description}}</p>
+        </ion-card-content>
+    
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <button align-self-center>
+                        <ion-icon slot="icon-only" name="thumbs-up" size="large"></ion-icon>
+                    </button>
+                </ion-col>
+                <ion-col>
+                    <button align-self-center>
+                        <ion-icon name="star-outline" size="large"></ion-icon>
+                    </button>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+      </ion-card>
+</ion-content>

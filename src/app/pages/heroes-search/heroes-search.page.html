@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Heroes Search</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-input [(ngModel)]="searchString" placeholder="search"></ion-input>
+    <ion-button expand="block" (click)="onSearchClick($event)">Do Search</ion-button>
+    <ion-list>
+        <ion-list-header>Results List</ion-list-header>
+        <ion-item-sliding *ngFor="let hero of heroesResultList" [routerLink]="['/heroes-details/', hero.id]" routerDirection="forward">
+            <ion-item>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col>
+                            <ion-img src="{{hero.thumbnail.path + '.' + hero.thumbnail.extension}}"></ion-img>
+                        </ion-col>
+                        <ion-col>
+                            <ion-row>
+                                {{hero.name}}
+                            </ion-row>
+                            <ion-row>
+                                {{hero.description}}
+                            </ion-row>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+            <ion-item-options>
+                    <ion-item-option>
+                      <ion-icon slot="start" name="star"></ion-icon>
+                      Favorite
+                    </ion-item-option>
+                  </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+    <ion-infinite-scroll threshold="100px" (ionInfinite)="onSearchClick($event)">
+        <ion-infinite-scroll-content
+            loadingSpinner="bubbles"
+            loadingText="Loading more data...">
+        </ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,15 @@
+{
+  "name": "SuperHeroes",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "30107816",
+  "v2": true,
+  "typescript": true,
+  "HTTP_PROXY": "http://172.30.0.253:8080/",
+  "HTTPS_PROXY": "http://172.30.0.253:8080/",
+  "proxy": "http://172.30.0.253:8080/",
+  "IONIC_HTTP_PROXY": "http://172.30.0.253:8080/",
+  "IONIC_HTTPS_PROXY": "http://172.30.0.253:8080/"
+}
